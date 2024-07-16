@@ -2,6 +2,11 @@
 
 ![Static Badge](https://img.shields.io/badge/License-AGPL3-green) ![Static Badge](https://img.shields.io/badge/Language-Arduino-red) ![Static Badge](https://img.shields.io/badge/Language-Micropython-red) ![Static Badge](https://img.shields.io/badge/Author-CQUT_handsomeboy-black)
 
+# Demands
+
+-   
+
+
 # References
 
 ![IRF520_connection_demo](http://hobbycomponents.com/images/forum/IFR520_MOSFET_Module_DC_Motor_Example.png)
@@ -20,11 +25,15 @@
 
 ### `sketch_may29a`
 
-**最初的版本**，直接使用IO口驱动电路板，没有考虑到红绿灯的工作电压与IO口数量的问题。
+**最初的版本**，使用Arduino，直接使用IO口驱动电路板，没有考虑到红绿灯的工作电压与IO口数量的问题。
 
 ### `Traffic_Light_Control_Upper`
 
 交通信号灯上位机MQTT通信协议验证程序。
+
+### `traffic_light_mpy`
+
+为带有TFT的ESP32S3编写的MicroPython版本，参考微雪例程。
 
 
 ## `02_Hardwares`
