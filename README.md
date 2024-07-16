@@ -1,12 +1,16 @@
-# :thinking: Welcome to Traffic Light Controllers
+[![SVG Banners](https://svg-banners.vercel.app/api?type=glitch&text1=Traffic🤔Light&width=900&height=200)](https://github.com/CQUT-handsomeboy/traffic_light_control)
 
 ![Static Badge](https://img.shields.io/badge/License-AGPL3-green) ![Static Badge](https://img.shields.io/badge/Language-Arduino-red) ![Static Badge](https://img.shields.io/badge/Language-Micropython-red) ![Static Badge](https://img.shields.io/badge/Author-CQUT_handsomeboy-black)
 
-# Preview
+# References
 
-![PCB预览](./.asset/img1.png)
+![IRF520_connection_demo](http://hobbycomponents.com/images/forum/IFR520_MOSFET_Module_DC_Motor_Example.png)
 
-![元件(未焊接)](./.asset/img2.jpg)
+![ESP32_connection](./.asset/img2.png)
+
+[IRF520](https://forum.hobbycomponents.com/viewtopic.php?f=76&t=1872)
+
+[ESP32S3-TOUCHLCD](https://www.waveshare.net/wiki/ESP32-S3-Touch-LCD-1.28)
 
 # Explanations
 
@@ -16,9 +20,7 @@
 
 ### `sketch_may29a`
 
-最初的版本，直接使用IO口驱动电路板，没有考虑到红绿灯的工作电压与IO口数量的问题。
-
-后续拟采用IIC控制IO扩展板，再进一步接入NMOS灯驱动方案驱动红绿灯。
+**最初的版本**，直接使用IO口驱动电路板，没有考虑到红绿灯的工作电压与IO口数量的问题。
 
 ### `Traffic_Light_Control_Upper`
 
@@ -27,15 +29,11 @@
 
 ## `02_Hardwares`
 
-**硬件工程**。为了减轻焊接工作，交通信号灯第四版中没有设计出IC芯片，而是采用转接版设计，兼容合宙ESP32-C3。
+~~**硬件工程**，第四版成功搞坏了一个ESP32C3。~~
 
-PCB中只引出了ESP32的IIC接口，控制一个I2C SSD1306 OLED屏幕和一个8端口IO扩展模块，但是如果红绿灯的工作电压不匹配，将考虑用NMOS管灯驱动。
+![](./.asset/img1.png)
 
-其中5v接口是供电接口，在交通灯PCB板和电源模块用铜柱和螺丝钉固定，但不幸的是电源模块坏掉了。
-
-交通信号灯转接板第三版已焊接，但是出现设计问题，已报废，第一版未焊接，难度较大，第四版将尽快焊接。
-
-考虑到电源IC焊接问题，后续设计拟采用DIP封装的电源IC或者继续沿用电源模块。
+**由于PCB不管怎么焊接都会出现差错，为了快速成型，使用面包板与杜邦线方案，不再设计PCB。**
 
 ## `03_Documents`
 
