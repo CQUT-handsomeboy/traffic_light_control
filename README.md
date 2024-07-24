@@ -2,11 +2,6 @@
 
 ![Static Badge](https://img.shields.io/badge/License-AGPL3-green) ![Static Badge](https://img.shields.io/badge/Language-Arduino-red) ![Static Badge](https://img.shields.io/badge/Language-Micropython-red) ![Static Badge](https://img.shields.io/badge/Author-CQUT_handsomeboy-black)
 
-# Demands
-
--   
-
-
 # References
 
 ![IRF520_connection_demo](http://hobbycomponents.com/images/forum/IFR520_MOSFET_Module_DC_Motor_Example.png)
@@ -34,6 +29,10 @@
 ### `traffic_light_mpy`
 
 为带有TFT的ESP32S3编写的MicroPython版本，参考微雪例程。
+
+### `traffic_light_mpy2`
+
+为不带有TFT屏幕的ESP32编写的MicroPython版本，增加了很多异常处理机制与执行状态。
 
 
 ## `02_Hardwares`

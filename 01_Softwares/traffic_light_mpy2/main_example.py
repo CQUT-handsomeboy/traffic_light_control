@@ -21,48 +21,12 @@ YELLOW_PIN_NUM = const(3)
 import network
 from time import sleep
 
-tft = None
-
-# def tft_init():
-#     global tft
-#     tft = gc9a01.GC9A01(
-#         SPI(2, baudrate=80000000, polarity=0, sck=Pin(10), mosi=Pin(11)),
-#         240,
-#         240,
-#         reset=Pin(14, Pin.OUT),
-#         cs=Pin(9, Pin.OUT),
-#         dc=Pin(8, Pin.OUT),
-#         backlight=Pin(2, Pin.OUT),
-#         rotation=0,
-#         buffer_size=16 * 32 * 2,
-#     )
-
-# tft_init()
-
-# def center_display(s):
-#     s = str(s)
-#     tft.fill(gc9a01.BLACK)
-#     screen = tft.width()
-#     width = tft.write_len(noto_sans, s)
-#     if width and width < screen:
-#         col = tft.width() // 2 - width // 2
-#     else:
-#         col = 0
-
-#     row = tft.height() // 2 - noto_sans.HEIGHT
-#     tft.write(noto_sans, s, col, row, gc9a01.WHITE)
-
 def log(info):
     """
     打印日志
     """
     info = str(info)
-    # center_display(info)
     print(info)
-
-
-
-log("tft init")
 
 def connect_wifi():
     global wlan
