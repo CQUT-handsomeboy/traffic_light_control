@@ -26,9 +26,7 @@ def tft_init():
     tft.init()
 
 
-def center_display(s, clear=False):
-    if clear:
-        tft.fill(gc9a01.BLACK)
+def center_display(s):
     tft.fill(gc9a01.BLACK)
     screen = tft.width()
     width = tft.write_len(noto_sans, s)
@@ -40,9 +38,13 @@ def center_display(s, clear=False):
     row = tft.height() // 2 - noto_sans.HEIGHT
     tft.write(noto_sans, s, col, row, gc9a01.WHITE)
 
+from time import sleep
 
 tft_init()
-center_display("TFT init", clear=True)
+center_display("TFT init")
+sleep(2)
+
+from sys import exit
 
 import network
 from time import sleep
@@ -75,13 +77,12 @@ def connect_wifi():
 ret = connect_wifi()
 
 if ret:
-    center_display("wifi connected", clear=True)
-    sleep(1)
+    center_display("wifi connected")
+    sleep(2)
     ADDR = wlan.ifconfig()[0]
-    center_display(ADDR, clear=True)
-    print(ADDR)
+    center_display(ADDR)
 else:
-    center_display("wifi error", clear=True)
+    center_display("wifi error")
 
 
 import socket
@@ -89,13 +90,13 @@ import json
 
 data_handler = None
 
+center_display("starting...")
+
 try:
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.bind((ADDR, PORT))
-    data, addr = s.recvfrom(1024)
+    data, addr = s.recvfrom(10)
     data_handler = json.loads(data)
-    
-
-    center_display(f"recv", clear=True)
+    center_display("recv")
 finally:
     s.close()
